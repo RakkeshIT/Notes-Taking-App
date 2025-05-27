@@ -24,8 +24,6 @@ A simple, secure, and responsive full-stack Notes Taking application built with 
 | **JWT** | Secure token-based authentication |
 | **Axios** | HTTP client for API communication |
 | **Bcrypt** | Password hashing for security |
-| **Tailwind CSS** | Utility-first CSS framework |
-
 ---
 
 ## 📦 Installation & Setup
