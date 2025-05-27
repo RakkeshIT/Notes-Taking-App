@@ -1,0 +1,42 @@
+.Container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Table,.TH, .TD{
+    border: 2px solid #e68a00;
+    border-collapse: collapse;
+    padding: 10px;
+}
+.CreateNotes{
+    position: relative;
+    left: 300px;
+    margin-bottom: 20px;
+    border: 1px solid #04b0f5;
+    color: #fff;
+    padding: 4px 20px;
+}
+.CreateNotes:hover{
+    transition: .7s;
+    background-color: #04b0f5;
+}
+.Button{
+    padding: 5px 20px;
+    border: 1px solid yellowgreen;
+    background: transparent;
+    cursor: pointer;
+}
+.Button:hover{
+    transition: .7s;
+    background-color: yellowgreen;
+}
+.Button2{
+    padding: 5px 20px;
+    border: 1px solid red;
+    background: transparent;
+    cursor: pointer;
+}.Button2:hover{
+    transition: .7s;
+    background-color: red;
+}

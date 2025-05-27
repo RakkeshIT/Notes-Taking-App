@@ -1,0 +1,60 @@
+.Container{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #e68a00;
+}
+.FormGroup{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    & > label{
+        align-self: flex-start;
+        margin-bottom: 10px;
+    }
+
+    & > input {
+        outline: none;
+        padding: 8px 20px;
+        background-color: #333;
+        border: 1px solid #e68a00;
+    }
+
+    & > textarea {
+          outline: none;
+        padding: 8px 20px;
+        background-color: #333;
+        border: 1px solid #e68a00;
+    }
+
+    & > input:focus{
+        transition: .7s;
+        border-radius: 5px;
+    }
+    & > textarea:focus{
+        transition: .7s;
+        border-radius: 5px;
+    }
+}
+
+
+/* Button Styling */
+.Button button{
+    padding: 5px 40px;
+    background: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.Button button:hover{
+    padding: 5px 40px;
+    transition: .7s;
+    background: #e68a00;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
