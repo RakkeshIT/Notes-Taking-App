@@ -24,7 +24,7 @@ const UserDashboard = ({ children }: { children: React.ReactNode }) => {
                 <ul className={`${Styles.Menus}`}>
                     <li><Link href=''>Home</Link></li>
                     <li><Link href=''>About</Link></li>
-                    <li><Link href='' onClick={handleLogout}>Logout</Link></li>
+                    <li><Link href='' onClick={handleLogout} className={`${Styles.Logout}`}>♻ Logout</Link></li>
                 </ul>
             </nav>
 

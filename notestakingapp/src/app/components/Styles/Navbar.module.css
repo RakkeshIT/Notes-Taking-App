@@ -4,20 +4,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px;
+    padding: 20px 30px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    position: fixed;
+    width: 100%;
 }
 
 .Title {
     font-family: "Pacifico", cursive;
     font-weight: bold !important;
     font-weight: bold;
-    background: #00FF00;
-    background: linear-gradient(to left, #00FF00 0%, #00FFFF 100%);
+    background: #06f006;
+    background: linear-gradient(to left, #06f006 0%, yellow 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -28,14 +30,23 @@
 
     &>li {
         padding-left: 50px;
-        & > a{
-            color: yellow;
+
+        &>a {
+            color: #fff;
             font-weight: bold;
         }
-        & > a:hover{
+
+        &>a:hover {
             text-decoration: underline;
         }
     }
 
     padding-left: 20px;
+}
+.Logout{
+    background-color: #000;
+    border: 2px solid yellowgreen;
+    padding: 1px 10px;
+    font-weight: 200;
+    letter-spacing: 3px;
 }

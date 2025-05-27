@@ -92,7 +92,7 @@ const ViewNotes = () => {
                 {getData.map((items, index) => (
                     <tbody key={items._id}>
                         <tr>
-                            <td className={`${Style.TD}`}>{index}</td>
+                            <td className={`${Style.TD}`}>{index + 1}</td>
                             <td className={`${Style.TD}`}>
                                 {editId === items._id ? (
                                     <input type="text" name='title' value={editData.title} onChange={handleChange}/>
