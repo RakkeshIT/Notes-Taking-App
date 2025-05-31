@@ -1,6 +1,7 @@
 import clientPromise from "@/utils/connect";
 import { ObjectId } from "mongodb";
 import { NextRequest, NextResponse } from "next/server";
+import jwt from 'jsonwebtoken'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -11,13 +12,20 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
+    const token = req.cookies.get('authToken')?.value;
+    if(!token) {
+      return NextResponse.json({message:'Unauthorized'}, {status:401})
+    }
 
+    const JWT_SECRET = process.env.JWT_SECRET as string;
+    const decoded :any = jwt.verify(token, JWT_SECRET)
     const client = await clientPromise;
     const db = client.db();
 
     const newData = {
       title,
       description,
+      userId: decoded.id,
       createdAt: new Date(),
     };
     await db.collection("Notes").insertOne(newData);
@@ -33,11 +41,17 @@ export async function POST(req: NextRequest) {
   }
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
+    const token = req.cookies.get('authToken')?.value;
+        if(!token) {
+      return NextResponse.json({message:'Unauthorized'}, {status:401})
+    }
+    const JWT_SECRET = process.env.JWT_SECRET as string
+    const decoded : any = jwt.verify(token, JWT_SECRET)
     const client = await clientPromise;
     const db = client.db();
-    const contents = await db.collection("Notes").find({}).toArray();
+    const contents = await db.collection("Notes").find({userId: decoded.id}).toArray();
     return NextResponse.json(contents, { status: 200 });
   } catch (error) {
     return NextResponse.json(

@@ -3,8 +3,13 @@ import React from 'react'
 import useAuthUser from '../../hooks/useAuth'
 import Link from 'next/link'
 import Style from '../Styles/Dashboard.module.css'
+import { useRouter } from 'next/navigation'
 const Dashboard = () => {
     const { user } = useAuthUser();
+    const router = useRouter()
+    if(!user?.name){
+        router.push('/client/login')
+    }
     return (
         <div className={`${Style.Container}`}>
             <div>
